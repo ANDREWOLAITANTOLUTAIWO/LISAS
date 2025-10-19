@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { display: flex; justify-content: center; align-items: center; background-color: #f0f2f5; }
+        .auth-container { padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); width: 350px; }
+        h2 { text-align: center; margin-bottom: 1.5rem; }
+        .form-group { margin-bottom: 1rem; }
+        label { display: block; margin-bottom: .5rem; }
+        input { width: 100%; padding: .5rem; border: 1px solid #ccc; border-radius: 4px; }
+        .form-link { display: block; text-align: center; margin-top: 1rem; }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <h2>Login</h2>
+        <div class="form-group">
+            <label for="parcelId">Parcel ID</label>
+            <input type="text" id="parcelId" placeholder="e.g., LA/EST/2025/001" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+        <button onclick="loginUser()">Login</button>
+        <a href="register.html" class="form-link">Don't have an account? Register</a>
+    </div>
+
+    <script src="https://unpkg.com/dexie@3/dist/dexie.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

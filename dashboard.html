@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { font-family: sans-serif; background-color: #f0f2f5; padding: 2rem; }
+        .dashboard-container { max-width: 800px; margin: auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .profile, .parcel-status { margin-bottom: 2rem; }
+        h2 { border-bottom: 2px solid #0077ff; padding-bottom: 0.5rem; margin-bottom: 1rem; }
+        .info-row { display: flex; padding: 0.5rem 0; border-bottom: 1px solid #eee; }
+        .info-label { font-weight: bold; width: 150px; color: #555; }
+        .header { display: flex; justify-content: space-between; align-items: center; }
+        .header button { width: auto; background-color: #dc3545; }
+    </style>
+</head>
+<body onload="loadDashboardData()">
+    <div class="dashboard-container">
+        <div class="header">
+            <h1>Dashboard</h1>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+        <div class="profile">
+            <h2>User Profile</h2>
+            <div class="info-row">
+                <div class="info-label">Name:</div>
+                <div id="userName">Loading...</div>
+            </div>
+             <div class="info-row">
+                <div class="info-label">Registered Parcel:</div>
+                <div id="parcelId">Loading...</div>
+            </div>
+        </div>
+
+        <div class="parcel-status">
+            <h2>Parcel Status</h2>
+            <div class="info-row">
+                <div class="info-label">Land Use:</div>
+                <div id="landUse">Loading...</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Area:</div>
+                <div id="area">Loading...</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Survey Plan:</div>
+                <div id="surveyPlan">Loading...</div>
+            </div>
+        </div>
+        <a href="index.html">Go to Main Map</a>
+    </div>
+
+    <script src="https://unpkg.com/dexie@3/dist/dexie.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>
