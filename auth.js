@@ -4,7 +4,7 @@ const db = new Dexie("cadastralDB");
 // Define the database schema. This now includes a 'users' table.
 // We are upgrading the version to 2 to introduce the new table.
 // Update the schema to version 3 to add the new index
-db.version(1).stores({
+db.version(4).stores({
   parcels: '++id, properties.ParcelID, properties.Land_Use',
   users: '++id, &parcelId, username' // Add 'username' as an index
 });
@@ -180,3 +180,4 @@ function logout() {
     window.location.href = 'login.html';
 
 }
+
