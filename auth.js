@@ -3,7 +3,7 @@ const db = new Dexie("cadastralDB");
 
 // Define the database schema. This now includes a 'users' table.
 // We are upgrading the version to 2 to introduce the new table.
-db.version(40).stores({
+db.version(20).stores({
   parcels: '++id, properties.ParcelID, properties.Land_Use', // From our previous setup
   users: '++id, &parcelId' // '++id' is the auto-incrementing primary key, '&parcelId' is a unique index
 });
@@ -125,5 +125,6 @@ function logout() {
     alert('You have been logged out.');
     window.location.href = 'login.html';
 }
+
 
 
