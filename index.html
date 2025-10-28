@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>WEBMAP_DB_AUTH</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <script src="https://unpkg.com/dexie@3/dist/dexie.js"></script>
+  <script src="auth.js"></script>
+  <script>checkLogin();</script>
+  <button id="toggleBtn" onclick="toggleTable()">☰ Table</button>
+
+  <div id="tablePanel">
+    <div id="controls">
+      <input type="text" id="parcelInput" placeholder="Enter parcel ID">
+      <button onclick="searchParcel()">Search</button>
+
+        <label for="filterSelect">Filter by Land Use:</label>
+        <select id="filterSelect" onchange="filterParcels()">
+          <option value="All">All</option>
+          <option value="Residential">Residential</option>
+          <option value="Commercial">Commercial</option>
+          <option value="Industrial">Industrial</option>
+        </select>
+      
+      <button class="export" onclick="exportMap()">📄 Export Map to PDF</button>
+      <button class="export" onclick="exportCSV()">📊 Export Table to CSV</button>
+      <button class="export" onclick="downloadGeoJSON()">💾 Save Updated GeoJSON</button>
+    </div>
+    <div id="attributeTable">
+      <table id="parcelTable">
+        <thead>
+          <tr><th>Parcel ID</th>
+            <th contenteditable="false">Occupier ID</th>
+            <th>Area (m²)</th>
+            <th>Land Use</th>
+            <th>Tax ID</th>
+            <th>Survey Plan</th>
+            <th>Surname</th>
+            <th>Firstname</th>
+            <th>Date Of Birth</th>
+            <th>Gender</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="map"></div>
+
+  <!-- JS Libraries -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://unpkg.com/dexie@3/dist/dexie.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Register the Service Worker in your index.html by adding a small script tag -->
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').then(registration => {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }, err => {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
+  }
+  </script>
+</body>
+</html>

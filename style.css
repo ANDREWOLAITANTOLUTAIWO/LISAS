@@ -1,0 +1,60 @@
+
+html, body { margin: 0; padding: 0; height: 100%; width: 100%; display: flex; }
+#tablePanel {
+  width: 20%;
+  height: 90%;
+  padding-top: 3%;
+  background: #fff;
+  border-right: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+#tablePanel.collapsed { transform: translateX(-100%); }
+#toggleBtn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2000;
+  background: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+#map { flex: 1; height: 100%; }
+#controls {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  background: #f9f9f9;
+}
+#controls input, #controls select, #controls button {
+  margin-bottom: 6px;
+  padding: 4px;
+  font-size: 13px;
+  width: 100%;
+  box-sizing: border-box;
+}
+button {
+  border: none;
+  background: #0077ff;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+button.export { background: #28a745; }
+#attributeTable { flex: 1; overflow-y: auto; border-top: 1px solid #ddd; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 4px;
+  text-align: left;
+}
+table td[contenteditable="true"] {
+  background: #fef9e7;
+  outline: none;
+}
+table tr:hover { background: #eef; cursor: pointer; }
+.highlight-row { background: #ffd !important; }
+
