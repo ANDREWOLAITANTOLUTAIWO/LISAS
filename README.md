@@ -16,34 +16,13 @@ Users’ Requirements
 
 Users’ knowledge and understanding of available technology plays important role in the expression of their desires for land information products and services. As users’ knowledge of available technology increases, land information service providers will be faced with the challenge of expanding their services. Thus, land administration systems should be built on an adaptable and scalable architecture. To improve LIService delivery in the study area, institutional and organizational changes that will strengthen relationships and accountability between policy makers, LIService provider and customers are recommended.
 
-Ownership:                                           
-Name of owner                                                
-Address of owner                                                        
-Gender                                            
-Marital status                                           
-Occupation                                                               
-Inheritance
+Ownership: Name of owner, Address of owner, Gender, Marital status, Occupation, Inheritance
 
-Spatially related information: 
-Large scale cadastral maps (scale greater than 1:5000) 
-Location    
-Survey plan of individual parcel
-Layout and master plans
-Size of parcels 
+Spatially related information: Large scale cadastral maps (scale greater than 1:5000), Location, Survey plan of individual parcel, Layout and master plans, Size of parcels 
 
-Legal and administrative:
-Adjudication reports
-Parcel subdivision reports
-Surveyor General's approval 
-Land allocation announcement 
-C of O confirmation  
+Legal and administrative: Adjudication reports, Parcel subdivision reports, Surveyor General's approval, Land allocation announcement, C of O confirmation  
 
-Economic aspects and use:
-Assessed value
-Fees, such as ground rent
-Mortgage status
-Leases / Sublease
-Current use of parcel
+Economic aspects and use: Assessed value, Fees, such as ground rent, Mortgage status, Leases / Sublease, Current use of parcel
 
 The users’ requirements are grouped in six layers discussed below, with large scale cadastral maps being the base layer. 
 
